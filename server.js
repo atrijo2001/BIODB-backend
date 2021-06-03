@@ -19,6 +19,12 @@ const drug = require('./Routes/Drugs');
 app.use(express.json());
 app.use(cors())
 
+
+app.get('/', (req, res)=> {
+    res.json({
+        message: "Successfully deployed"
+    })
+})
 const connDB = async () =>{
    try {
        await mongoose.connect(process.env.MONGO_URI, {
